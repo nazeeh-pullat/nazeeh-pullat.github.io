@@ -1,0 +1,55 @@
+.page{padding:16vh 6vw 10vh;max-width:1800px;margin:0 auto}
+.page h1{font-size:clamp(54px,11vw,200px);font-weight:700;letter-spacing:-.06em;line-height:.88;margin-bottom:3vh}
+.page .lead{color:var(--mut);max-width:60ch;line-height:1.55;font-size:18px;margin-bottom:5vh}
+
+/* filters */
+.filters{display:grid;gap:14px;margin-bottom:5vh;position:sticky;top:60px;z-index:20;background:linear-gradient(var(--bg) 75%,transparent);padding:14px 0 18px}
+.fr{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.fr .lab{color:var(--mut);width:84px}
+.chip{padding:8px 14px;border-radius:99px;border:1px solid var(--line);background:none;color:var(--fg);font:12px var(--mono);letter-spacing:.04em;cursor:pointer;transition:border-color .3s,background .3s,color .3s}
+.chip:hover{border-color:var(--p5)}
+.chip.on{background:var(--grad);border-color:transparent;color:#fff}
+.chip small{opacity:.6;margin-left:6px}
+.search{flex:1;min-width:220px;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:99px;padding:10px 16px;color:var(--fg);font:14px var(--font);outline:none}
+.search:focus{border-color:var(--p5)}
+.count{color:var(--mut);margin:0 0 20px}
+
+/* grid */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:20px}
+.wc{display:block;text-decoration:none;color:inherit;perspective:900px}
+.wc .wi{position:relative;aspect-ratio:4/5;border-radius:20px;overflow:hidden;background:var(--bg-g);transform-style:preserve-3d;will-change:transform}
+.wc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.wc:hover img{transform:scale(1.06)}
+.wc .wi::before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(7,7,10,.85),transparent 55%);z-index:1}
+.wc .wi::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at var(--gx,50%) var(--gy,50%),rgba(255,255,255,.28),transparent 55%);opacity:0;transition:opacity .3s;z-index:3;pointer-events:none}
+.wc:hover .wi::after{opacity:1}
+.wc .wt{position:absolute;left:16px;right:16px;bottom:14px;z-index:2;display:grid;gap:6px}
+.wc .wt b{font-size:19px;letter-spacing:-.02em;line-height:1.1;font-weight:600}
+.wc .wt span{color:rgba(255,255,255,.75);font:11px var(--mono);letter-spacing:.05em}
+.wc.ph .wi{display:flex;align-items:center;justify-content:center;padding:20px;text-align:center}
+.wc.ph .wi .big{position:relative;z-index:2;font-size:34px;font-weight:700;letter-spacing:-.04em;line-height:1;opacity:.9;padding-bottom:70px}
+.more-wrap{display:flex;justify-content:center;margin-top:7vh}
+.empty{color:var(--mut);padding:10vh 0;text-align:center}
+
+/* project page */
+.proj{padding:15vh 6vw 8vh;max-width:1600px;margin:0 auto}
+.crumbs{color:var(--mut);margin-bottom:3vh}.crumbs a{text-decoration:none}.crumbs a:hover{color:var(--p5)}
+.proj h1{font-size:clamp(40px,7.5vw,130px);font-weight:700;letter-spacing:-.05em;line-height:.92;margin-bottom:4vh;max-width:18ch}
+.pmeta{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:20px;border-block:1px solid var(--line);padding:22px 0;margin-bottom:6vh}
+.pmeta div span{display:block;color:var(--mut);margin-bottom:6px}.pmeta div b{font-weight:500;font-size:18px}
+.note{color:var(--mut);font-size:14px;line-height:1.5;max-width:70ch;margin-bottom:5vh}
+.pimg{border-radius:24px;overflow:hidden;background:#111;margin-bottom:20px}
+.pimg img{width:100%;height:auto}
+.pnav{display:flex;justify-content:space-between;gap:20px;margin:8vh 0;border-top:1px solid var(--line);padding-top:4vh}
+.pnav a{text-decoration:none;max-width:45%}.pnav small{display:block;color:var(--mut);margin-bottom:8px}.pnav b{font-size:clamp(20px,2.6vw,38px);letter-spacing:-.03em;font-weight:600}
+.pnav a:hover b{color:var(--p5)}
+.related h2{font:400 12px var(--mono);color:var(--mut);margin-bottom:24px;letter-spacing:.05em}
+
+footer.simple{border-top:1px solid var(--line);padding:6vh 6vw;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;color:var(--mut)}
+footer.simple a{text-decoration:none}footer.simple a:hover{color:var(--p5)}
+
+@media (max-width:800px){
+  .page,.proj{padding:14vh 5vw 8vh}.filters{position:static}.fr .lab{width:100%}
+  .grid{grid-template-columns:repeat(2,1fr);gap:12px}.wc .wt b{font-size:15px}
+  .pnav{flex-direction:column}.pnav a{max-width:100%}
+}
