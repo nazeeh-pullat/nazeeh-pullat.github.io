@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /project.html
-
-Sitemap: https://nazeeh-pullat.github.io/sitemap.xml
